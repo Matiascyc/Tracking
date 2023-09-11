@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h1>Seguimiento Comercial</h1>
+    <div class="tracker">
+        <form id="trackingForm">
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" name="cliente" required>
+
+            <label for="Producto">Producto:</label>
+            <input type="text" id="Producto" name="acuerdo" required>
+
+            <label for="fechaDespacho">Fecha Despacho:</label>
+            <input type="date" id="fechaDespacho" name="fechaDespacho" required>
+
+            <label for="fechaEntrega">Fecha Entrega:</label>
+            <input type="date" id="fechaEntrega" name="fechaEntrega" required>
+
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado" onchange="cambiarColorEstado(this)" required>
+                <option class="pendiente" value="pendiente">Pendiente</option>
+                <option class="proceso" value="proceso">En Proceso</option>
+                <option class="completo" value="completo">Completo</option>
+            </select>
+
+            <button type="button" onclick="agregarRegistro()">Agregar</button>
+            <button type="button" onclick="limpiarTabla()">Limpiar Tabla</button>
+        </form>
+
+        <h2>Registros</h2>
+        <table id="registroTable">
+            <tr>
+                <th>Cliente</th>
+                <th>Producto</th>
+                <th>Fecha Despacho</th>
+                <th>Fecha Entrega</th>
+                <th>Estado</th>
+            </tr>
+        </table>
+    </div>
+
+    <input type="button" onclick="tableToExcel('registroTable', 'Table')" value="Export to Excel">
+    
+    <script src="js/export.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
