@@ -49,8 +49,11 @@
         </table>
     </div>
 
-    <input type="button" onclick="tableToExcel('registroTable', 'Table')" value="Export to Excel">
-    
+    <a id="download_xls" download="filename.xls" href="#">Export to Excel</a>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/excellentexport@3.4.3/dist/excellentexport.min.js"></script>
+
     <script src="js/export.js"></script>
     <script src="js/script.js"></script>
 
